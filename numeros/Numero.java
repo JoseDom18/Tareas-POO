@@ -234,7 +234,9 @@ public class Numero {
     }
 
     /**
-     * Realiza la tabla de multiplicar del numero recibido.
+     * Realiza la tabla de multiplicar del numero recibido por teclado.
+     * 
+     * @param scanner es la entrada del objeto scanner por teclado.
      */
     public static void multiplicar(Scanner scanner) {
 
@@ -250,7 +252,27 @@ public class Numero {
         System.out.println();
     }
 
-    // factorial
+    /**
+     * Realiza un operacion factorial del numero ingresado.
+     * 
+     * @param scanner es la entrada del objeto scanner por teclado.
+     */
+    public static void factorial(Scanner scanner)  {
+
+        
+        System.out.println("<<<Factorial de un numero.>>>");
+
+        System.out.print("Ingresa un numero: ");
+        int numero = scanner.nextInt();
+        int f = numero;
+
+        for (int i = numero - 1; i > 0; i--) {
+            f *= i;
+        }
+
+        System.out.printf("El numero factorial de %d es: %d.", numero, f);
+    }
+  
     // maximo comun divisor
     // serie de fibonacci
     // numero primo, elabore un programa que mediante un ciclo descubra si un número

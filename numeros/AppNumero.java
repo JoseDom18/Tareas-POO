@@ -16,7 +16,8 @@ public class AppNumero {
         // System.out.println();
         // Numero.par_impar(scanner);
         // Numero.clasificaNumeros(scanner);
-        Numero.multiplicar(scanner);
+        // Numero.multiplicar(scanner);
+        Numero.factorial(scanner);
 
         scanner.close();
     }
