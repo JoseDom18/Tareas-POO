@@ -16,11 +16,11 @@ public class Numero {
     /**
      * Sirve para determinar si el numero es positivo.
      */
-    private boolean positivo;
+    private final boolean positivo;
     /**
      * Sirver para determinar si el numero es par.
      */
-    private boolean par;
+    private final boolean par;
 
     /**
      * Sirve para crear un nuevo numero y de manera automatica dice si es positivo o
@@ -93,8 +93,7 @@ public class Numero {
     /**
      * Crea una lista de numeros.
      */
-    public static ArrayList<Numero> crearLista() {
-        Scanner scanner = new Scanner(System.in);
+    public static ArrayList<Numero> crearLista(Scanner scanner) {
         ArrayList<Numero> listaNumeros = new ArrayList<>();
 
         int cantidad = 0;
@@ -113,8 +112,6 @@ public class Numero {
             listaNumeros.add(nuevoNumero);
         }
 
-        scanner.close();
-
         return listaNumeros;
     }
 
@@ -122,11 +119,13 @@ public class Numero {
      * Listar una lista a manera de prueba.
      * 
      */
-    public static void pruebaLista() {
-
-        for (Numero a : Numero.crearLista()) {
+    public static void pruebaLista(Scanner scanner) {
+        ArrayList<Numero> lista = crearLista(scanner);
+        for (Numero a : lista) {
             System.out.println(a.getValor());
         }
+        System.out.println("Gracias por usar mi programa. by - Mingood.");
+        System.out.println();
     }
 
     /**
@@ -134,76 +133,129 @@ public class Numero {
      * 
      * @return La suma de los primeros 5 numeros de la lista.
      */
-    public static int suma5numeros() {
-        ArrayList<Numero> lista = Numero.crearLista();
+    public static void suma5numeros(Scanner scanner) {
+
+        System.out.println("Se sumaran los primero 5 numeros de una lista.");
+        System.out.println();
+
+        ArrayList<Numero> lista = crearLista(scanner);
         int suma5numeros = 0;
-        //Numero.crearLista();
-        for(int i = 0; i < 5; i++) {
-                suma5numeros += lista.get(i).getValor();
-           }
-        return suma5numeros;
+
+        for (int i = 0; i < 5 && i < lista.size(); i++) {
+            suma5numeros += lista.get(i).getValor();
+        }
+
+        System.out.printf("El resultado de la suma es: %d.%n", suma5numeros);
+
+        System.out.println("Gracias por usar mi programa. by - Mingood.");
+        System.out.println();
     }
-    
-    
-    // suma de primeros 5 numeros
-    // 10 numeros por teclado y muestre cuantos fueron positivos y negativos
-    // 10 numeros por teclado y muestre cuantos fueron pares y impares
+
+    /**
+     * Menciona si un numero es positivo o negativo.
+     */
+    public static void pos_neg(Scanner scanner) {
+
+        System.out.println("Es positivo o negativo??");
+
+        System.out.print("Ingresa un numero: ");
+        int valor = scanner.nextInt();
+
+        Numero numero = new Numero(valor);
+
+        if (numero.isPositivo()) {
+            System.out.println("El numero que ingresaste es positivo.");
+        } else {
+            System.out.println("El numero que ingresaste es negativo.");
+        }
+
+        System.out.println("Gracias por usar mi programa. by - Mingood.");
+        System.out.println();
+    }
+
+    /**
+     * Menciona si un numero es par o impar.
+     */
+    public static void par_impar(Scanner scanner) {
+
+        System.out.println("Es par o impar??");
+
+        System.out.print("Ingresa un numero: ");
+        int valor = scanner.nextInt();
+
+        Numero numero = new Numero(valor);
+
+        if (numero.isPar()) {
+            System.out.println("El numero que ingresaste es par.");
+        } else {
+            System.out.println("El numero que ingresaste es impar.");
+        }
+
+        System.out.println("Gracias por usar mi programa. by - Mingood.");
+        System.out.println();
+    }
+
+    /**
+     * De una lista de 10 numeros cuenta cuantos son positivos, negativos, pares e
+     * impares.
+     */
+    public static void clasificaNumeros(Scanner scanner) {
+
+        System.out.println("<<<Clasifiquemos numeros>>>");
+
+        ArrayList<Numero> lista = crearLista(scanner);
+
+        int contadorPos = 0;
+        int contadorNeg = 0;
+        int contadorPar = 0;
+        int contadorImp = 0;
+
+        for (Numero numero : lista) {
+
+            if (numero.isPositivo()) {
+                contadorPos++;
+            } else {
+                contadorNeg++;
+            }
+
+            if (numero.isPar()) {
+                contadorPar++;
+            } else {
+                contadorImp++;
+            }
+        }
+
+        System.out.printf(
+                "Se encontraron los siguientes tipos de numeros.%nPares: %d%nImpares: %d%nPositivos: %d%nNegativos: %d%n",
+                contadorPar, contadorImp, contadorPos, contadorNeg);
+
+        System.out.println("Gracias por usar mi programa. by - Mingood.");
+        System.out.println();
+    }
+
+    /**
+     * Realiza la tabla de multiplicar del numero recibido.
+     */
+    public static void multiplicar(Scanner scanner) {
+
+        System.out.println("Tabla de multiplicar.");
+        System.out.print("Ingresa un numero para crear su tabla de multiplicar: ");
+        int numero = scanner.nextInt();
+
+        for (int i = 1; i < 11; i++) {
+            System.out.printf("%d x %d = %d%n", numero, i, numero * i);
+        }
+
+        System.out.println("Gracias por usar mi programa. by - Mingood.");
+        System.out.println();
+    }
+
     // factorial
-    // recibir por teclado y listar tabla de multipicar
     // maximo comun divisor
     // serie de fibonacci
     // numero primo, elabore un programa que mediante un ciclo descubra si un número
     // es primo o no.
     // numero perfecto, Un número perfecto es un número natural que es igual a la
     // suma de sus divisores propios positivos, sin incluirse él mismo.
-
-    // public static void pos_neg(int value) {
-    // int contaPositivo = 0;
-    // int contaNegativo = 0;
-    // if (value == 0) {
-    // System.out.println("Gracias por usar mi programa. - Mingood.");
-    // } else if (value > 0) {
-    // System.out.println("El numero es Positivo.");
-    // contaPositivo++;
-    // } else {
-    // System.out.println("El numero es Negativo.");
-    // contaNegativo++;
-    // }
-    // }
-
-    // public static void par_impar(int value) {
-    // int contaPar = 0;
-    // int contaImpar = 0;
-    // if (value == 0) {
-    // System.out.println("good bye.");
-    // } else if (value % 2 == 0) {
-    // System.out.println("El numero es par.");
-    // contaPar++;
-    // } else {
-    // System.out.println("El numero es impar.");
-    // contaImpar++;
-    // }
-    // }
-
-    // public static int contador() {
-
-    // }
-
-    // public static void iniciar() {
-
-    //     Scanner scanner = new Scanner(System.in);
-    //     int limite = 10;
-    //     while (limite > 0) {
-    //         System.out.print("Ingresa diez numeros por teclado : ");
-    //         int value = scanner.nextInt();
-    //         Numeros.pos_neg(value);
-    //         Numeros.par_impar(value);
-    //         limite--;
-
-    //     }
-
-    //     System.out.printf("Se contaron %d numero(s) positivos.%n", contaPositivo);
-    //     scanner.close();
-    // }
 
 }
