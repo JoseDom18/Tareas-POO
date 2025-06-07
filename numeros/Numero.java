@@ -271,10 +271,40 @@ public class Numero {
         }
 
         System.out.printf("El numero factorial de %d es: %d.", numero, f);
+        System.out.println("Gracias por usar mi programa. by - Mingood.");
+        System.out.println();
+    }
+
+    /**
+     * Realiza una serie de fibonnacci
+     * 
+     * @param scanner es la entrada del objeto scanner por teclado.
+     */
+    public static void fibonnacci(Scanner scanner) {
+        
+        System.out.println("<<<Serie de fibonnacci.>>>");
+        System.out.print("Cuantos numeros quieres que tenga tu serie: ");
+        int limite = scanner.nextInt();
+
+        int a = 1;
+        int b = 0;
+
+        for (int i = 0; i < limite; i++) {
+            int c = a + b;
+            System.out.printf("%d", c);
+            if (i < limite - 1) {
+                System.out.print("-");
+            }
+            a = b;
+            b = c;
+        }
+        
+        System.out.println();
+        System.out.println("Gracias por usar mi programa. by - Mingood.");
+        System.out.println();
     }
   
     // maximo comun divisor
-    // serie de fibonacci
     // numero primo, elabore un programa que mediante un ciclo descubra si un número
     // es primo o no.
     // numero perfecto, Un número perfecto es un número natural que es igual a la

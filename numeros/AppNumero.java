@@ -17,7 +17,8 @@ public class AppNumero {
         // Numero.par_impar(scanner);
         // Numero.clasificaNumeros(scanner);
         // Numero.multiplicar(scanner);
-        Numero.factorial(scanner);
+        // Numero.factorial(scanner);
+        Numero.fibonnacci(scanner);
 
         scanner.close();
     }
