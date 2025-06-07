@@ -91,45 +91,60 @@ public class Numero {
     }
 
     /**
-     * Crear lista de numeros.
+     * Crea una lista de numeros.
      */
-    public static void crearLista() {
+    public static ArrayList<Numero> crearLista() {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Numero> listaNumeros = new ArrayList<>();
 
-        String continuar;
+        int cantidad = 0;
 
-        do {
+        System.out.println("Ha iniciado la creacion de una lista de numeros.");
+        System.out.print("Que cantidad de numeros quiere en su lista: ");
+        cantidad = scanner.nextInt();
+        scanner.nextLine();
+
+        for (int i = 0; i < cantidad; i++) {
             System.out.print("Ingresa un numero: ");
             int valor = scanner.nextInt();
             scanner.nextLine();
 
             Numero nuevoNumero = new Numero(valor);
             listaNumeros.add(nuevoNumero);
-
-            System.out.print("Si desea continuar ingresando numeros presione (s): ");
-            continuar = scanner.nextLine();
-
-
-        } while (continuar.equalsIgnoreCase("s"));
-
-        for (Numero a : listaNumeros) {
-            System.out.println(a.getValor());
         }
 
         scanner.close();
+
+        return listaNumeros;
     }
 
     /**
-     * Usar lista prueba.
+     * Listar una lista a manera de prueba.
      * 
      */
-    public void pruebaLista() {
-        Numero.crearLista();
-        for (Numero a : listaNumeros) {
-            
+    public static void pruebaLista() {
+
+        for (Numero a : Numero.crearLista()) {
+            System.out.println(a.getValor());
         }
     }
+
+    /**
+     * Crea una lista y suma los primeros 5 numeros de una lista.
+     * 
+     * @return La suma de los primeros 5 numeros de la lista.
+     */
+    public static int suma5numeros() {
+        ArrayList<Numero> lista = Numero.crearLista();
+        int suma5numeros = 0;
+        //Numero.crearLista();
+        for(int i = 0; i < 5; i++) {
+                suma5numeros += lista.get(i).getValor();
+           }
+        return suma5numeros;
+    }
+    
+    
     // suma de primeros 5 numeros
     // 10 numeros por teclado y muestre cuantos fueron positivos y negativos
     // 10 numeros por teclado y muestre cuantos fueron pares y impares
@@ -157,38 +172,38 @@ public class Numero {
     // }
 
     // public static void par_impar(int value) {
-    //     int contaPar = 0;
-    //     int contaImpar = 0;
-    //     if (value == 0) {
-    //         System.out.println("good bye.");
-    //     } else if (value % 2 == 0) {
-    //         System.out.println("El numero es par.");
-    //         contaPar++;
-    //     } else {
-    //         System.out.println("El numero es impar.");
-    //         contaImpar++;
-    //     }
+    // int contaPar = 0;
+    // int contaImpar = 0;
+    // if (value == 0) {
+    // System.out.println("good bye.");
+    // } else if (value % 2 == 0) {
+    // System.out.println("El numero es par.");
+    // contaPar++;
+    // } else {
+    // System.out.println("El numero es impar.");
+    // contaImpar++;
+    // }
     // }
 
-    public static int contador() {
+    // public static int contador() {
 
-    }
+    // }
 
-    public static void iniciar() {
+    // public static void iniciar() {
 
-        Scanner scanner = new Scanner(System.in);
-        int limite = 10;
-        while (limite > 0) {
-            System.out.print("Ingresa diez numeros por teclado : ");
-            int value = scanner.nextInt();
-            Numeros.pos_neg(value);
-            Numeros.par_impar(value);
-            limite--;
+    //     Scanner scanner = new Scanner(System.in);
+    //     int limite = 10;
+    //     while (limite > 0) {
+    //         System.out.print("Ingresa diez numeros por teclado : ");
+    //         int value = scanner.nextInt();
+    //         Numeros.pos_neg(value);
+    //         Numeros.par_impar(value);
+    //         limite--;
 
-        }
+    //     }
 
-        System.out.printf("Se contaron %d numero(s) positivos.%n", contaPositivo);
-        scanner.close();
-    }
+    //     System.out.printf("Se contaron %d numero(s) positivos.%n", contaPositivo);
+    //     scanner.close();
+    // }
 
 }
