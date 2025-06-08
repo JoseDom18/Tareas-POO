@@ -408,6 +408,38 @@ public class Numero {
         System.out.println();
 
     }
-    
+
+    /**
+     * Calcula promedio du un conjunto de numeros.
+     * 
+     * @param scanner entrada por teclado.
+     * @return el valor del promedio
+     */
+    public static int calcularPromedio(Scanner scanner) {
+
+        ArrayList<Numero> lista = crearLista(scanner);
+        int promedio = lista.size();
+        int suma = 0;
+
+        for (Numero numero : lista) {
+            suma += numero.getValor();
+        }
+
+        promedio = suma / promedio;
+
+        return promedio;
+    }
+
+    public static void promedio(Scanner scanner) {
+
+        System.out.println("<<<Calcular promedio de calificaciones>>>");
+
+        int resultado = calcularPromedio(scanner);
+        System.out.printf("El el promedio es: %d.%n", resultado);
+
+        System.out.println();
+        System.out.println("Gracias por usar mi programa. by - Mingood.");
+        System.out.println();
+    }
 
 }

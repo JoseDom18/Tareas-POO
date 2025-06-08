@@ -20,8 +20,9 @@ public class AppNumero {
         // Numero.factorial(scanner);
         // Numero.fibonnacci(scanner);
         // Numero.mcd(scanner);
-        //Numero.primo(scanner);
-        Numero.perfecto(scanner);
+        // Numero.primo(scanner);
+        // Numero.perfecto(scanner);
+        Numero.promedio(scanner);
 
         scanner.close();
     }
