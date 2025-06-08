@@ -1,4 +1,4 @@
-#Tareas - Rama version 1.0
+# Tareas - Rama version 1.0
 
 En esta rama cree todos los metodos de la clase numeros que pude relacionar en los ejercicios del profe.
 
