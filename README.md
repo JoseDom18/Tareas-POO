@@ -1,3 +1,8 @@
-#Tareas - Programacion orientada a objetos
+#Tareas - Rama version 1.0
 
-Repositorio para almacenar todas las tareas, actividades y ejercicios realizados en mi tercer cuatrimestre de Universidad en la materia de programacion.
+En esta rama cree todos los metodos de la clase numeros que pude relacionar en los ejercicios del profe.
+
+### Mejoras pendientes para la siguiente version:
+- Verificacion de datos.
+- Uso de parametros como entrada.
+- Retorno de valores para reutilizar.
