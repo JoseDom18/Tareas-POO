@@ -257,9 +257,8 @@ public class Numero {
      * 
      * @param scanner es la entrada del objeto scanner por teclado.
      */
-    public static void factorial(Scanner scanner)  {
+    public static void factorial(Scanner scanner) {
 
-        
         System.out.println("<<<Factorial de un numero.>>>");
 
         System.out.print("Ingresa un numero: ");
@@ -281,7 +280,7 @@ public class Numero {
      * @param scanner es la entrada del objeto scanner por teclado.
      */
     public static void fibonnacci(Scanner scanner) {
-        
+
         System.out.println("<<<Serie de fibonnacci.>>>");
         System.out.print("Cuantos numeros quieres que tenga tu serie: ");
         int limite = scanner.nextInt();
@@ -298,13 +297,89 @@ public class Numero {
             a = b;
             b = c;
         }
-        
+
         System.out.println();
         System.out.println("Gracias por usar mi programa. by - Mingood.");
         System.out.println();
     }
-  
-    // maximo comun divisor
+
+    /**
+     * Recibe dos numeros por teclado y obtiene su MCD.
+     * 
+     * @param scanner es la entrada del objeto scanner por teclado.
+     */
+    public static void mcd(Scanner scanner) {
+
+        // pido dos numeros por teclado
+        System.out.println("<<<MCD>>>");
+        System.out.print("Ingresa un primer numero: ");
+        int maximo = scanner.nextInt();
+        scanner.nextLine();
+        System.out.print("Ingresa un segundo numero: ");
+        int minimo = scanner.nextInt();
+        scanner.nextLine();
+
+        // variables creadas para proteger mi maximo y minimo he imprimirlos al final.
+        int aux = 0;
+        int termino1 = maximo;
+        int termino2 = minimo;
+
+        // acomodo de varibles maximo y minimo
+        if (minimo > maximo) {
+            aux = minimo;
+            minimo = maximo;
+            maximo = aux;
+        }
+
+        // aplicacion de algoritmo de euclides maximo entre minimo, el nuevo maximo es
+        // el minimo y el nuevo minimo es el resto de la division.
+        do {
+
+            aux = maximo % minimo;
+            maximo = minimo;
+            minimo = aux;
+
+        } while (minimo != 0);
+
+        System.out.printf("El MCD de %d y %d es: %d.%n", termino1, termino2, maximo);
+
+        System.out.println();
+        System.out.println("Gracias por usar mi programa. by - Mingood.");
+        System.out.println();
+    }
+
+    /**
+     * Recibe dos numeros por teclado y obtiene su MCD.
+     * 
+     * @param scanner es la entrada del objeto scanner por teclado.
+     */
+    public static void primo(Scanner scanner) {
+
+        System.out.println("<<<Es primo??>>>");
+        System.out.print("Ingresa un numero: ");
+        int numero = scanner.nextInt();
+
+        boolean primo = false;
+
+        for (int i = 1; i <= numero + 1; i++) {
+            if (numero % i != 0 && numero == i) {
+                primo = true;
+            } else {
+                primo = false;
+            }
+        }
+
+        if (primo) {
+            System.out.printf("%d es un numero primo.%n", numero);
+        } else {
+            System.out.printf("%d NO es un numero primo.%n", numero);
+        }
+
+        System.out.println();
+        System.out.println("Gracias por usar mi programa. by - Mingood.");
+        System.out.println();
+    }
+
     // numero primo, elabore un programa que mediante un ciclo descubra si un número
     // es primo o no.
     // numero perfecto, Un número perfecto es un número natural que es igual a la

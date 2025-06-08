@@ -18,7 +18,9 @@ public class AppNumero {
         // Numero.clasificaNumeros(scanner);
         // Numero.multiplicar(scanner);
         // Numero.factorial(scanner);
-        Numero.fibonnacci(scanner);
+        // Numero.fibonnacci(scanner);
+        // Numero.mcd(scanner);
+        Numero.primo(scanner);
 
         scanner.close();
     }
