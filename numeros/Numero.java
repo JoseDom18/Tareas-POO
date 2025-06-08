@@ -349,7 +349,7 @@ public class Numero {
     }
 
     /**
-     * Recibe dos numeros por teclado y obtiene su MCD.
+     * Define si un numero es primo
      * 
      * @param scanner es la entrada del objeto scanner por teclado.
      */
@@ -359,12 +359,10 @@ public class Numero {
         System.out.print("Ingresa un numero: ");
         int numero = scanner.nextInt();
 
-        boolean primo = false;
+        boolean primo = true;
 
-        for (int i = 1; i <= numero + 1; i++) {
-            if (numero % i != 0 && numero == i) {
-                primo = true;
-            } else {
+        for (int i = 2; i < numero; i++) {
+            if (numero % i == 0) {
                 primo = false;
             }
         }
@@ -380,9 +378,36 @@ public class Numero {
         System.out.println();
     }
 
-    // numero primo, elabore un programa que mediante un ciclo descubra si un número
-    // es primo o no.
-    // numero perfecto, Un número perfecto es un número natural que es igual a la
-    // suma de sus divisores propios positivos, sin incluirse él mismo.
+    /**
+     * Determina si un numero es perfecto.
+     * 
+     * @param scanner es la entrada del objeto scanner por teclado.
+     */
+    public static void perfecto(Scanner scanner) {
+
+        System.out.println("<<<Numero perfecto>>>");
+        System.out.print("Ingresa un numero: ");
+        int numero = scanner.nextInt();
+        int suma = 0;
+
+        for (int i = 1; i < numero; i++) {
+
+            if (numero % i == 0) {
+                suma += i;
+            }
+        }
+
+        if (suma == numero) {
+            System.out.printf("%d es un numero perfecto.", numero);
+        } else {
+            System.out.printf("%d NO es un numero perfecto.", numero);
+        }
+
+        System.out.println();
+        System.out.println("Gracias por usar mi programa. by - Mingood.");
+        System.out.println();
+
+    }
+    
 
 }
