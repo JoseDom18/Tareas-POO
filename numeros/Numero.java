@@ -430,12 +430,37 @@ public class Numero {
         return promedio;
     }
 
+    /**
+     * Imprime el promedio en pantalla.
+     * 
+     * @param scanner ingreso por teclado.
+     */
     public static void promedio(Scanner scanner) {
 
         System.out.println("<<<Calcular promedio de calificaciones>>>");
 
         int resultado = calcularPromedio(scanner);
         System.out.printf("El el promedio es: %d.%n", resultado);
+
+        System.out.println();
+        System.out.println("Gracias por usar mi programa. by - Mingood.");
+        System.out.println();
+    }
+
+    /**
+     * Muestra los proximos 5 años siguientes al año igresado.
+     * 
+     * @param scanner ingreso por teclado.
+     */
+    public static void cincoAnios(Scanner scanner) {
+
+        System.out.println("<<<5 años>>>");
+        System.out.print("Ingresa un año: ");
+        int anio = scanner.nextInt();
+
+        for (int i = 1; i < 5 + 1; i++) {
+            System.out.println(anio + i);
+        }
 
         System.out.println();
         System.out.println("Gracias por usar mi programa. by - Mingood.");

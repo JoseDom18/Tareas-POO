@@ -22,7 +22,8 @@ public class AppNumero {
         // Numero.mcd(scanner);
         // Numero.primo(scanner);
         // Numero.perfecto(scanner);
-        Numero.promedio(scanner);
+        // Numero.promedio(scanner);
+        Numero.cincoAnios(scanner);
 
         scanner.close();
     }
