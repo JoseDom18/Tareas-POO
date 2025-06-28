@@ -63,7 +63,7 @@ public class CaracterCoordenadas {
     char[] charXSeparado = s.toCharArray();
     int ancho = charXSeparado.length * 5;
     Character[][] lienzo = new Character[9][ancho];
-    
+    int aumento = 0;
     
     for (int m = 0; m < charXSeparado.length; m++) {
 
@@ -72,24 +72,26 @@ public class CaracterCoordenadas {
       if (abecedario.containsKey(letra)) {
         CaracterCoordenadas a = abecedario.get(letra);
         Boolean[][] coor = a.getCoor();
-        
+
         for (int i = 0; i < 9; i++) {
           for (int j = 0; j < ancho; j++) {
-            if (coor[i][j] != null || coor[i][j] != null) {
-              lienzo[i][j ] = '*';
+            if (coor[i][j] != null) {
+              lienzo[i][j + aumento] = '*';
             } else {
-              lienzo[i][j] = '-';
+              lienzo[i][j + aumento] = ' ';
             }
           }
         }
-
-        for (int k = 0; k < 9; k++) {
-          for (int l = 0; l < ancho; l++) {
-            System.out.print(lienzo[k][l]);
-          }
-          System.out.println();
-        }
       }
+      if (m < charXSeparado.length - 1) {
+        aumento += 5;
+      }
+    }
+    for (int k = 0; k < 9; k++) {
+      for (int l = 0; l < ancho; l++) {
+        System.out.print(lienzo[k][l]);
+      }
+      System.out.println();
     }
     System.out.println("Gracias por usar mi programa. by - Mingood.");
     
