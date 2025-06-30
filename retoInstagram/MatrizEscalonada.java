@@ -10,6 +10,7 @@ public class MatrizEscalonada {
     int[][] matriz = new int[input][input];
     int aumento = 0;
     int conteo = 1;
+    int impresion = input;
 
     while (input > 0) {
       for (int i = 0; i < input; i++) {
@@ -20,9 +21,9 @@ public class MatrizEscalonada {
       aumento += 1;
 
     }
-
-    for (int j = 0; j < 6; j++) {
-      for (int k = 0; k < 6; k++) {
+ 
+    for (int j = 0; j < impresion; j++) {
+      for (int k = 0; k < impresion; k++) {
         if (matriz[j][k] != 0) {
           System.out.print(matriz[j][k] + " ");
         }
