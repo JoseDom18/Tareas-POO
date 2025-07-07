@@ -7,9 +7,11 @@ public interface Validacion {
         int anio;
         while (true) {
             if (scanner.hasNextInt()) {
-                anio = scanner.nextInt();
-                scanner.nextLine();
+              anio = scanner.nextInt();
+              scanner.nextLine();
+              
                 break;
+              
             } else {
                 System.out.println("Entrada no valida, ingrese una año valido.");
                 scanner.nextLine();
