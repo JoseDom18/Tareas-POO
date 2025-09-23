@@ -17,8 +17,8 @@ public class MatrizEscalonada {
         matriz[i + aumento][i] = conteo;
         conteo += 1;
       }
-      input -= 1;
-      aumento += 1;
+      input--;
+      aumento++;
 
     }
  
